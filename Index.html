@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="sv-se">
+	<head>
+		<meta charset="utf-8" />
+		<title>Datorbutiken</title>
+		
+		<link href="./css/stylesheet.css" rel="stylesheet" type="text/css" />
+	</head>
+	
+	<body>
+	
+		<div id="skicka" style="display: none;">
+			<button id="btnCancel" onClick="showForm(1)">x</button>
+			<div id="fixForm">
+				<form action="mailto:ehmaleehh@gmail.com" method="post" id="sendForm">
+						
+						<h1>Din beställning</h1>
+						<label>Förnamn</label><br>
+						<input type="text" name="firstName" id="firstName" required  />*<br/>
+						
+						<label>Efternamn</label><br/>
+						<input type="text" name="lastName" id="lastName" required />*<br/>
+						
+						<label id="address">Adress:</label><label>Postnummer:</label><br/>
+						<input type="text" name="adress" id="adress" required />
+						
+						
+						<input type="text" name="postalCode" id="postal" required />*<br/>
+						
+						
+						<label>Stad:</label><br/>
+						<input type="text" name="city" id="city" required />* <br/><br/>
+						
+						<label>Betala via:</label><br/>
+						<input type="radio" name="wayToPay" id="invoice" value="invoice" required /> Faktura 
+						<input type="radio" name="wayToPay" id="card" value="card" required /> Kort
+						<br/>
+						<br/>
+						<label for="finalSum" id="sum">Summa:</label>
+						<input type="text" id="finalSum" name="priceFinal" readonly />
+						<br/>
+						<br/>
+						<input type="submit" id="btnOrder" />
+						
+						<textarea name="txtFinalOrder" id="txtFinalOrder" readonly></textarea>
+				</form>
+			</div>
+			
+		</div>
+		
+		<div id="coverBackground" style="display: none;">
+			
+		</div>
+	
+		<div id="wrapper">
+			<div id="logo">
+				<h1>all the components you'll ever need - minidatorbutiken</h1>
+			</div>
+			
+
+		
+			
+			<div id="varukorg">
+				<div id="extraWrapper">
+					<form>
+						<p>varukorg</p>
+						<textarea name="txtOrder" id="txtOrder" placeholder="Din order visas här" readonly></textarea>
+						<br>
+						<label for="showSum">totalsumma:</label>
+						<input type="text" id="showSum" name="price" readonly />
+					</form>
+					<button id="btnSend" onClick="showForm(0)">skicka beställning</button>
+					<button id="reset" onClick="reset()">töm varukorg</button>
+				</div>
+			</div>
+			
+			
+			
+			<div class="components">
+				<img src="./images/motherboard.jpg" alt="Ett moderbord"/>
+				<h3>Moderbord - MSI</h3> 
+				
+				<button class="showInfo"  onClick="showInfo('infoModerbord')">specifikation</button>
+				<button class="order" onClick="order('Moderbord', 1500)">beställ</button>
+				
+				<div class="infoDiv" id="infoModerbord" style="display: none;">
+					<div class="infoText">
+						<h4>
+							Formfaktor
+						</h4>
+						<p>
+							ATX
+						</p>
+						
+						<h4>
+							Anslutningar
+						</h4>
+						<p>
+							HDMI<br/>
+							USB 3.0	<br/>
+							Ljudutgångar<br/>
+						</p>
+					</div>
+				</div>
+				
+			</div>
+
+			
+			<div class="components">
+				<img src="./images/processor.jpg" alt="En processor" />
+				<h3>Processor - Intel Core i7</h3>
+				
+				<button class="showInfo" onClick="showInfo('infoCpu')">specifikation</button>
+				<button class="order" onClick="order('Processor', 2000)">beställ</button>
+				<div class="infoDiv" id="infoCpu" style="display: none;">
+					<div class="infoText">
+						<h4>
+							Produktegenskaper
+						</h4>
+						<p>
+							Hastighet: 4 GHZ<br/>
+							Kärnor: Quad Core
+						</p>
+					</div>
+				</div>
+				
+				
+			</div>	
+			
+			
+			<div class="components">
+				<img src="./images/grafikkort.jpg" alt="Ett grafikkort"/>
+				<h3>Grafikkort - MSI N570GTX</h3>
+				
+				<button class="showInfo" onClick="showInfo('infoGraphics')">specifikation</button>
+				<button class="order" onClick="order('Grafikkort', 19999)">beställ</button>
+				<div class="infoDiv" id="infoGraphics" style="display: none;">
+					<div class="infoText">
+						<h4>
+							Grafik
+						</h4>
+						<p>
+							Maximal upplösning: 4096 x 2 160 pixlar
+						</p>
+					</div>
+				</div>
+				
+				
+			</div>			
+			
+			
+			
+			<div class="components">
+				<img src="./images/ram.jpg" alt="Ett RAM-minne"/>
+				<h3>RAM - Corsair Vengeance, 4GB x 2</h3>
+				
+				<button class="showInfo" onClick="showInfo('infoRam')">specifikation</button>
+				<button class="order" onClick="order('RAM-minne', 800)">beställ</button>
+				<div class="infoDiv" id="infoRam" style="display: none;">
+					<div class="infoText">
+						<h4>
+							Specifikation
+						</h4>
+						<p>
+							Produktinformation
+						</p>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			
+			
+			<div class="components">
+				<img src="./images/ssd.jpg" alt="En SSD-disk"/>
+				<h3>SSD</h3>
+				
+				<button class="showInfo" onClick="showInfo('infoSsd')">specifikation</button>
+				<button class="order" onClick="order('SSD-disk', 3499)">beställ</button>
+				<div class="infoDiv" id="infoSsd" style="display: none;">
+					<div class="infoText">
+						<h4>
+							Specifikation
+						</h4>
+						<p>
+							Produktinformation
+						</p>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			
+			<div class="components" id="bottomDiv">
+				<img src="./images/psu3.jpg" alt="Ett nätagg"/>
+				<h3>Nätaggreagat - Corsair TX750</h3>
+				
+				<button class="showInfo" onClick="showInfo('infoPsu')">specifikation</button>
+				<button class="order" onClick="order('Nätaggregat', 1399)">beställ</button>
+				<div class="infoDiv" id="infoPsu" style="display: none;">
+					<div class="infoText">
+						<h4>
+							Specifikation
+						</h4>
+						<p>
+							Produktinformation
+						</p>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			
+		</div>
+		<script src="./js/script.js" type="text/javascript"></script>
+	</body>
+	
+</html>
