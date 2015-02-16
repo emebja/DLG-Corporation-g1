@@ -153,5 +153,5 @@ function validate(){
 */
 
 function testIng() {
-	var awesomeness; 
+	var awesomeness = "";
 }
