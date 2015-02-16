@@ -151,3 +151,7 @@ function validate(){
 	}
 }
 */
+
+function testIng() {
+	var awesomeness; 
+}
